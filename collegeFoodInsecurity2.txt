@@ -1,0 +1,56 @@
+[1] "Total Percentage of college students facing food insecurity:  0.103565045621296"
+[1] "By race"
+[1] "White:  0.107594936708861"
+[1] "Black:  0.0824329731892757"
+[1] "Asian:  0.17741935483871"
+[1] "American Indian/Alaska Native:  0.132352941176471"
+[1] "Hawaiian/Pacific Islander:  0.0396039603960396"
+[1] "By sex"
+[1] "Male:  0.0797274275979557"
+[1] "Female:  0.0916993830622546"
+[1] "By disability status"
+[1] "People with disabilities:  0.21105527638191"
+[1] "People without disabilities:  0.0823548079974611"
+[1] "By full-time enrollment status"
+[1] "Full-time college students:  0.101573676680973"
+[1] "Part-time college students:  0.0821085635900451"
+[1] "By citizenship status"
+[1] "US Citizens:  0.086949293433084"
+[1] "Non-US Citizens:  0.0781893004115226"
+[1] "Logistic Regression model summarizing the data"
+
+Call:
+glm(formula = AnyIns12M ~ fullTimeSchool + citizen + male + white + 
+    black + americanIndian + pacificIslander + hispAnyRace + 
+    employed + lowIncome + disability, family = "binomial", data = cps[cps$enrolled == 
+    TRUE & cps$college == TRUE, ])
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.4441  -0.3540  -0.2598  -0.2381   2.9429  
+
+Coefficients:
+                    Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         -3.41660    0.33287 -10.264  < 2e-16 ***
+fullTimeSchoolTRUE   0.38818    0.11066   3.508 0.000451 ***
+citizenTRUE          0.27014    0.19171   1.409 0.158796    
+maleTRUE            -0.09038    0.09525  -0.949 0.342703    
+whiteTRUE            0.25175    0.28545   0.882 0.377806    
+blackTRUE           -0.31256    0.25704  -1.216 0.223992    
+americanIndianTRUE   0.11007    0.27011   0.408 0.683633    
+pacificIslanderTRUE -1.17059    0.33160  -3.530 0.000415 ***
+hispAnyRaceTRUE      0.17743    0.12085   1.468 0.142058    
+employedTRUE         0.27810    0.30746   0.904 0.365740    
+lowIncomeTRUE        2.07168    0.09992  20.732  < 2e-16 ***
+disabilityTRUE       1.00727    0.20015   5.033 4.84e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3821.0  on 6500  degrees of freedom
+Residual deviance: 3243.8  on 6489  degrees of freedom
+AIC: 3267.8
+
+Number of Fisher Scoring iterations: 6
+
